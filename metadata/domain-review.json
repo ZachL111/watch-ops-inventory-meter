@@ -1,0 +1,73 @@
+{
+  "repo": "watch-ops-inventory-meter",
+  "language": "JavaScript",
+  "category": "Automation",
+  "goal": "Develop a JavaScript command-oriented project for inventory scenarios with safe and unsafe fixtures, remediation hints, and no production deployment claims.",
+  "review_model": {
+    "terms": [
+      "dry-run spread",
+      "rename risk",
+      "operator cost",
+      "idempotence"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "dry-run spread",
+      "signal": 78,
+      "slack": 54,
+      "drag": 29,
+      "confidence": 73,
+      "score": 196,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "rename risk",
+      "signal": 58,
+      "slack": 44,
+      "drag": 14,
+      "confidence": 89,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "operator cost",
+      "signal": 63,
+      "slack": 36,
+      "drag": 31,
+      "confidence": 68,
+      "score": 137,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "idempotence",
+      "signal": 87,
+      "slack": 53,
+      "drag": 11,
+      "confidence": 75,
+      "score": 269,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "dry-run spread",
+      "signal": 92,
+      "slack": 39,
+      "drag": 12,
+      "confidence": 52,
+      "score": 239,
+      "lane": "ship"
+    }
+  ]
+}
